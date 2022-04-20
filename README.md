@@ -1,4 +1,4 @@
-# homebrew_dripper
+# homebrew_dripper project
 
 A new Flutter project.
 
