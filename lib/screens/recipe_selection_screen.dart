@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:homebrew_dripper/models/coffee_recipe.dart';
+import 'package:homebrew_dripper/models/resource.dart';
 import 'package:homebrew_dripper/screens/recipe_detail_screen.dart';
 import 'package:homebrew_dripper/utils/coffee_data.dart';
+import 'package:homebrew_dripper/utils/resource_data.dart';
 
 class RecipeSelectionScreen extends StatelessWidget {
   @override
@@ -46,14 +48,17 @@ class RecipeList extends StatelessWidget {
 }
 
 class ResourceList extends StatelessWidget {
+  List<Resource> resources = ResourceData.loadResources();
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Text("Coffee"),
-          trailing: Icon(Icons.chevron_right),
-        )
+        for (Resource resource in resources)
+          ListTile(
+            title: Text(resource.name),
+            trailing: Icon(Icons.chevron_right),
+          )
       ],
     );
   }
