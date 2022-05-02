@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homebrew_dripper/models/coffee_recipe.dart';
 import 'package:homebrew_dripper/models/resource.dart';
 import 'package:homebrew_dripper/screens/recipe_detail_screen.dart';
+import 'package:homebrew_dripper/screens/resource_screen.dart';
 import 'package:homebrew_dripper/utils/coffee_data.dart';
 import 'package:homebrew_dripper/utils/resource_data.dart';
 import 'dart:async';
@@ -110,6 +111,12 @@ class ResourceList extends StatelessWidget {
           ListTile(
             title: Text(resource.name),
             trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResourceScreen(resource)));
+            },
           )
       ],
     );
