@@ -70,17 +70,36 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
     RecipeStep currentRecipeStep = widget.recipe.steps[currentStep];
 
     return Scaffold(
+      backgroundColor: Color(0xFF4C748B),
       appBar: AppBar(
         title: Text("Recipe Steps"),
       ),
-      body: ListView(
-        children: [
-          Text("${currentRecipeStep.text}"),
-          Text("${stepTimeRemaining}"),
-          Text("Steps"),
-          for (RecipeStep step in remainingSteps)
-            ListTile(title: Text(step.text))
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("${stepTimeRemaining}",
+                style: TextStyle(
+                    fontFamily: 'Kollektif',
+                    fontSize: 100,
+                    letterSpacing: 0.1,
+                    color: Color(0xFFFFFFFF))),
+            Text("${currentRecipeStep.text}",
+                style: TextStyle(
+                    fontFamily: 'Kollektif',
+                    fontSize: 30,
+                    letterSpacing: 0.1,
+                    color: Color(0xFFFFFFFF))),
+            Text("Steps",
+                style: TextStyle(
+                    fontFamily: 'Kollektif',
+                    fontSize: 20,
+                    letterSpacing: 0.1,
+                    color: Color(0xFFFFFFFF))),
+            for (RecipeStep step in remainingSteps)
+              ListTile(title: Text(step.text))
+          ],
+        ),
       ),
     );
   }
