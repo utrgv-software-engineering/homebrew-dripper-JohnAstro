@@ -10,14 +10,16 @@ class RecipeDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFE5E5E5),
       appBar: AppBar(
         title: Text("Recipe Details"),
       ),
       body: ListView(
         children: [
           Text(recipe.name),
-          Text("${recipe.coffeeVolumeGrams}"),
-          Text("${recipe.waterVolumeGrams}"),
+          Text("${recipe.coffeeVolumeGrams}g - ${recipe.grindSize}"),
+          Text("${recipe.waterVolumeGrams}g - water"),
+          Text("${recipe.miscDetails}"),
           RaisedButton(
             child: Text("Start"),
             onPressed: () {

@@ -5,6 +5,7 @@ class DoneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFE5E5E5),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
