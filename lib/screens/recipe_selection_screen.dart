@@ -62,16 +62,36 @@ class RecipeSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF3F3F3),
       appBar: AppBar(
         title: Text("Recipe Selection"),
       ),
-      body: ListView(
-        children: [
-          Text("Coffee Recipes", key: Key("coffee-recipes")),
-          RecipeList(),
-          Text("Resources"),
-          ResourceList()
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Coffee Recipes",
+                key: Key("coffee-recipes"),
+                style: TextStyle(
+                    fontFamily: 'Kollektif',
+                    fontSize: 25,
+                    letterSpacing: 0.1,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4C748B))),
+            Text(""),
+            RecipeList(),
+            Text(""),
+            Text("Resources",
+                style: TextStyle(
+                    fontFamily: 'Kollektif',
+                    fontSize: 25,
+                    letterSpacing: 0.1,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4C748B))),
+            Text(""),
+            ResourceList()
+          ],
+        ),
       ),
     );
   }
@@ -86,8 +106,16 @@ class RecipeList extends StatelessWidget {
       children: [
         for (CoffeeRecipe recipe in recipes)
           ListTile(
-              title: Text(recipe.name),
+              title: Text("${recipe.name}",
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 20,
+                      letterSpacing: 0.1,
+                      color: Color(0xFF4C748B))),
               trailing: Icon(Icons.chevron_right),
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Color(0xFF4C748B), width: 1),
+                  borderRadius: BorderRadius.circular(1)),
               onTap: () {
                 Navigator.push(
                   context,
@@ -109,8 +137,16 @@ class ResourceList extends StatelessWidget {
       children: [
         for (Resource resource in resources)
           ListTile(
-            title: Text(resource.name),
+            title: Text("${resource.name}",
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 20,
+                    letterSpacing: 0.1,
+                    color: Color(0xFF4C748B))),
             trailing: Icon(Icons.chevron_right),
+            shape: RoundedRectangleBorder(
+                side: BorderSide(color: Color(0xFF4C748B), width: 1.5),
+                borderRadius: BorderRadius.circular(2)),
             onTap: () {
               Navigator.push(
                   context,

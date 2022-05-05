@@ -97,7 +97,19 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
                     letterSpacing: 0.1,
                     color: Color(0xFFFFFFFF))),
             for (RecipeStep step in remainingSteps)
-              ListTile(title: Text(step.text))
+              ListTile(
+                  title: Text("${step.text}",
+                      style: TextStyle(
+                          fontFamily: 'Kollektif',
+                          fontSize: 20,
+                          letterSpacing: 0.1,
+                          color: Color(0xFFFFFFFF))),
+                  trailing: Text("${step.time}s",
+                      style: TextStyle(
+                          fontFamily: 'Kollektif',
+                          fontSize: 20,
+                          letterSpacing: 0.1,
+                          color: Color(0xFFFFFFFF)))),
           ],
         ),
       ),
