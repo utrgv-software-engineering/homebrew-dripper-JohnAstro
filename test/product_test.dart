@@ -11,40 +11,53 @@ void main() {
         'Group 8');
 
     expect(validProduct.price, 0.00);
-    expect(validProduct.url,
-        'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro');
+    expect(
+        validProduct.url,
+        Uri.parse(
+            'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro'));
     expect(validProduct.name, 'Group 8');
   });
 
   test('Throws ArgumentError if the price of the product is negative', () {
     // make product values
     double price = -20.00;
-    String link =
+    String url =
         'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro';
     String name = 'Group 8';
 
     // Expect argument error
-    expect(() => Product(price, link, name), throwsArgumentError);
+    expect(() => Product(price, url, name), throwsArgumentError);
   });
 
   test('throws ArgumentError if the price of a product is a string', () {
     // make product values
     String price = '10.50';
-    String link =
+    String url =
         'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro';
     String name = 'Group 8';
 
     // Expect argument error
-    expect(() => Product(price, link, name), throwsArgumentError);
+    expect(() => Product(price, url, name), throwsArgumentError);
   });
 
   test('throws ArguementError if the name of the product is an int', () {
     double price = 20.00;
-    String link =
+    String url =
         'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro';
     int name = 52;
 
     // Expect argument error
-    expect(() => Product(price, link, name), throwsArgumentError);
+    expect(() => Product(price, url, name), throwsArgumentError);
+  });
+
+  test('throws ArguementError if the url of the product does not contain https',
+      () {
+    double price = 20.00;
+    String url =
+        'http://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro';
+    String name = 'Group 8';
+
+    // Expect argument error
+    expect(() => Product(price, url, name), throwsArgumentError);
   });
 }
