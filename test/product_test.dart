@@ -11,7 +11,7 @@ void main() {
         'Group 8');
 
     expect(validProduct.price, 0.00);
-    expect(validProduct.link,
+    expect(validProduct.url,
         'https://github.com/utrgv-software-engineering/homebrew-dripper-JohnAstro');
     expect(validProduct.name, 'Group 8');
   });
