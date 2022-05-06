@@ -21,7 +21,7 @@ class ResourceScreen extends StatelessWidget {
               title: Text(product.name),
               subtitle: Text('\$${product.price}'),
               onTap: () {
-                Link(product.link);
+                Link(product.url);
               },
             ),
         ],
