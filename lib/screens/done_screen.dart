@@ -8,36 +8,29 @@ class DoneScreen extends StatelessWidget {
       backgroundColor: Color(0xFFE5E5E5),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-                child: Container(
-                    child: Align(
-                        alignment: Alignment.center,
-                        child: Text("enjoy your amazing handmade coffee",
-                            style: TextStyle(
-                                fontFamily: 'Monteserrat',
-                                fontSize: 20,
-                                letterSpacing: 0.1,
-                                color: Color(0xFF4C748B)))))),
-            Expanded(
-                child: Container(
-                    child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          RecipeSelectionScreen()));
-                            },
-                            child: Text("done",
-                                style: TextStyle(
-                                    color: Color(0xFF4C748B),
-                                    fontSize: 18,
-                                    fontFamily: 'Monserrat',
-                                    letterSpacing: 1))))))
+            Container(
+                padding: EdgeInsets.only(top: 312, bottom: 242),
+                child: Text("enjoy your amazing\n handmade coffee",
+                    style: TextStyle(
+                        fontFamily: 'Monteserrat',
+                        fontSize: 18,
+                        letterSpacing: 0.1,
+                        color: Color(0xFF4C748B)))),
+            Container(
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RecipeSelectionScreen()));
+                    },
+                    child: Text("done",
+                        style: TextStyle(
+                            color: Color(0xFF4C748B),
+                            fontSize: 18,
+                            fontFamily: 'Monteserrat',
+                            letterSpacing: 0.1))))
           ],
         ),
       ),
