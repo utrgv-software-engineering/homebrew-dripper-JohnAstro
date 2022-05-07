@@ -3,7 +3,7 @@ import 'package:homebrew_dripper/models/product.dart';
 
 Resource makeCoffeeResource() {
   List<Product> products = [
-    Product(17.95, 'https://www.peets.com/products/big-bang',
+    Product(18.95, 'https://www.peets.com/products/big-bang',
         "Peet's Coffee Big Bang | Medium Roast"),
     Product(
         14.99,

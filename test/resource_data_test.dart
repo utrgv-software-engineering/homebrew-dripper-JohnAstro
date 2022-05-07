@@ -34,23 +34,25 @@ void main() {
     // Product 0
     expect(
         resources[0].products[0].name, "Peet's Coffee Big Bang | Medium Roast");
-    expect(resources[0].products[0].price, 17.95);
-    expect(resources[0].products[0].link,
-        'https://www.peets.com/products/big-bang');
+    expect(resources[0].products[0].price, 18.95);
+    expect(resources[0].products[0].url,
+        Uri.parse('https://www.peets.com/products/big-bang'));
 
     // Product 1
     expect(resources[0].products[1].name,
         "Caribou Coffee French Roast Blend | Dark Roast");
     expect(resources[0].products[1].price, 14.99);
-    expect(resources[0].products[1].link,
-        'https://www.cariboucoffee.com/product/sumatra-lingtong-region/');
+    expect(
+        resources[0].products[1].url,
+        Uri.parse(
+            'https://www.cariboucoffee.com/product/sumatra-lingtong-region/'));
 
     // Product 2
     expect(resources[0].products[2].name,
         "Irving Farm Highline Blend | Light Roast");
     expect(resources[0].products[2].price, 17.35);
-    expect(resources[0].products[2].link,
-        'https://www.drinktrade.com/highline/p/1526');
+    expect(resources[0].products[2].url,
+        Uri.parse('https://www.drinktrade.com/highline/p/1526'));
   });
 
   test('Grinders resource should give back the grinder products in my app', () {
