@@ -19,26 +19,60 @@ CoffeeRecipe makeSweetMariasRecipe() {
   return recipe;
 }
 
-CoffeeRecipe makeTestRecipe() {
+CoffeeRecipe makePTsRecipe() {
+  List<RecipeStep> steps = [
+    RecipeStep("Add 320g water", 5),
+    RecipeStep("Cover and wait", 5),
+    RecipeStep("Stir", 5),
+    RecipeStep("Cover and wait", 5),
+    RecipeStep("Stir", 5),
+  ];
+  CoffeeRecipe recipe = CoffeeRecipe("PT's", 26, 320, "finely ground coffee",
+      "Artisan coffee: award-winning cup of joe", steps);
+  return recipe;
+}
+
+CoffeeRecipe makeTexasRecipe() {
   List<RecipeStep> steps = [
     RecipeStep("Add 360g water", 5),
+    RecipeStep("Add 1/2 Fresh Ginger Root", 5),
+    RecipeStep("Add 2 Whole Nutmeg", 5),
+    RecipeStep("Cover and wait", 5),
+    RecipeStep("Stir", 5),
+    RecipeStep("Cover and wait", 5),
+    RecipeStep("Stir", 5),
+  ];
+  CoffeeRecipe recipe = CoffeeRecipe("Texas Coffee School", 22, 360,
+      "finely ground coffee", "Lone Star: one proud, mean bean", steps);
+  return recipe;
+}
+
+CoffeeRecipe makeHomeRecipe() {
+  List<RecipeStep> steps = [
+    RecipeStep("Add 375g water", 5),
+    RecipeStep("Add 1 tbsp brown sugar", 5),
     RecipeStep("Cover and wait", 5),
     RecipeStep("Stir", 5),
     RecipeStep("Cover and wait", 5),
     RecipeStep("Stir", 5),
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
-      "Test Recipe",
+      "Homegrounds",
       22,
-      360,
+      375,
       "finely ground coffee",
-      "The original recipe: makes one delicious cup",
+      "Right at Home: for that nostalgic feeling",
       steps);
   return recipe;
 }
 
 List<CoffeeRecipe> getAllRecipes() {
-  return [makeSweetMariasRecipe(), makeTestRecipe()];
+  return [
+    makeSweetMariasRecipe(),
+    makePTsRecipe(),
+    makeTexasRecipe(),
+    makeHomeRecipe()
+  ];
 }
 
 class CoffeeData {

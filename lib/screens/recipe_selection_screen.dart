@@ -63,9 +63,6 @@ class RecipeSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF3F3F3),
-      appBar: AppBar(
-        title: Text("Recipe Selection"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,24 +102,27 @@ class RecipeList extends StatelessWidget {
     return Column(
       children: [
         for (CoffeeRecipe recipe in recipes)
-          ListTile(
-              title: Text("${recipe.name}",
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 20,
-                      letterSpacing: 0.1,
-                      color: Color(0xFF4C748B))),
-              trailing: Icon(Icons.chevron_right),
-              shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Color(0xFF4C748B), width: 1),
-                  borderRadius: BorderRadius.circular(1)),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => RecipeDetailScreen(recipe)),
-                );
-              })
+          Container(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: ListTile(
+                title: Text("${recipe.name}",
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 20,
+                        letterSpacing: 0.1,
+                        color: Color(0xFF4C748B))),
+                trailing: Icon(Icons.chevron_right),
+                shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Color(0xFF4C748B), width: 1),
+                    borderRadius: BorderRadius.circular(2)),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RecipeDetailScreen(recipe)),
+                  );
+                }),
+          )
       ],
     );
   }
@@ -136,23 +136,26 @@ class ResourceList extends StatelessWidget {
     return Column(
       children: [
         for (Resource resource in resources)
-          ListTile(
-            title: Text("${resource.name}",
-                style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20,
-                    letterSpacing: 0.1,
-                    color: Color(0xFF4C748B))),
-            trailing: Icon(Icons.chevron_right),
-            shape: RoundedRectangleBorder(
-                side: BorderSide(color: Color(0xFF4C748B), width: 1.5),
-                borderRadius: BorderRadius.circular(2)),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ResourceScreen(resource)));
-            },
+          Container(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: ListTile(
+              title: Text("${resource.name}",
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 20,
+                      letterSpacing: 0.1,
+                      color: Color(0xFF4C748B))),
+              trailing: Icon(Icons.chevron_right),
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Color(0xFF4C748B), width: 1),
+                  borderRadius: BorderRadius.circular(2)),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResourceScreen(resource)));
+              },
+            ),
           )
       ],
     );

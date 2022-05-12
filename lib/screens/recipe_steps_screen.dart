@@ -71,9 +71,6 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xFF4C748B),
-      appBar: AppBar(
-        title: Text("Recipe Steps"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -84,18 +81,25 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
                     fontSize: 100,
                     letterSpacing: 0.1,
                     color: Color(0xFFFFFFFF))),
-            Text("${currentRecipeStep.text}",
-                style: TextStyle(
-                    fontFamily: 'Kollektif',
-                    fontSize: 30,
-                    letterSpacing: 0.1,
-                    color: Color(0xFFFFFFFF))),
-            Text("Steps",
-                style: TextStyle(
-                    fontFamily: 'Kollektif',
-                    fontSize: 20,
-                    letterSpacing: 0.1,
-                    color: Color(0xFFFFFFFF))),
+            Container(
+              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: Text("${currentRecipeStep.text}\n",
+                  style: TextStyle(
+                      fontFamily: 'Kollektif',
+                      fontSize: 30,
+                      letterSpacing: 0.1,
+                      color: Color(0xFFFFFFFF))),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 60, 380, 0),
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 15),
+              child: Text("Steps",
+                  style: TextStyle(
+                      fontFamily: 'Kollektif',
+                      fontSize: 20,
+                      letterSpacing: 0.1,
+                      color: Color(0xFFFFFFFF))),
+            ),
             for (RecipeStep step in remainingSteps)
               ListTile(
                   title: Text("${step.text}",
