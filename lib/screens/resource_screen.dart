@@ -11,9 +11,6 @@ class ResourceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(resource.name),
-      ),
       body: ListView(
         children: [
           for (Product product in resource.products)
